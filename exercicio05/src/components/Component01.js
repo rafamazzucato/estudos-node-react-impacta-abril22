@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Component02 } from './Component02';
 import { Item } from './Item';
+import { Link } from 'react-router-dom';
 
 export class Component01 extends Component {
 
@@ -9,8 +10,8 @@ export class Component01 extends Component {
         cursos: [
             "React.js",
             "Angular",
-            "Vue.js",
-            "Next.js"
+            "React.js",
+            "Angular"
         ]
     }
     
@@ -24,12 +25,37 @@ export class Component01 extends Component {
         }
     }
 
+    componentDidMount(){
+        console.log('componentDidMount do Component01');
+        setTimeout(()=> {
+            this.setState({cursos: [
+                "React.js",
+                "Angular",
+                "Vue.js",
+                "Next.js",
+                "C#",
+                "PHP",
+                "Kotlin",
+                "Python",
+            ]});
+        }, 3000);
+    }
+
+    componentDidUpdate(){
+        console.log('componentDidUpdate do Component01');
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount do Component01');
+    }
+
     render() {
 
         const {texto, cursos } = this.state;
 
         return (
             <>
+                <Link to="/componente2">Componente2</Link>
                 <input type="text" 
                     value={texto} 
                     onChange={this.setTexto} />
