@@ -1,0 +1,12 @@
+{
+  "name": "exercicio03",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
